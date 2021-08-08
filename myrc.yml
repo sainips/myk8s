@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: mynginx-pod
+spec: 
+  replicas: 3
+  selector:
+    app: hello-pod
+  template:
+    metadate:
+     labels:
+      app: hello-pod
+    specs:
+     cantainers:
+     - name: hello-container
+       image: nginx
+       ports:
+       - containerport: 80
+
